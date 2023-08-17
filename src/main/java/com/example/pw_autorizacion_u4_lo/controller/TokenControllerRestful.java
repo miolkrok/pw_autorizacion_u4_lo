@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.pw_autorizacion_u4_lo.Repository.IUsuarioRepository;
-import com.example.pw_autorizacion_u4_lo.Repository.modelo.Usuario;
 import com.example.pw_autorizacion_u4_lo.service.to.UsuarioTO;
 
 @RestController
@@ -16,10 +14,10 @@ import com.example.pw_autorizacion_u4_lo.service.to.UsuarioTO;
 @CrossOrigin
 public class TokenControllerRestful {
 
-    @Autowired
+//    @Autowired
     // private IUsuarioRepository usuarioRepository;
 
-    @GetMapping
+    @GetMapping("/obtener")
     public String obtenerTokenPorUsuario(@RequestBody UsuarioTO username){
         return "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c";
     }
