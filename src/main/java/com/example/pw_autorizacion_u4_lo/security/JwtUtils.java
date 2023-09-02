@@ -7,6 +7,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import com.example.pw_autorizacion_u4_lo.Repository.modelo.Usuario;
+
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
@@ -23,6 +25,12 @@ public class JwtUtils {
 
     private Integer jwtExpiration;
 
+    public Usuario usua = new Usuario();
+
+    /**
+     * @param username
+     * @return
+     */
     public String generateJWTToken(String username) {
 
         LOG.info("Semilla: " + jwtSecret + " Tiempo: " + jwtExpiration);

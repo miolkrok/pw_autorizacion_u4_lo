@@ -11,11 +11,10 @@ import javax.transaction.Transactional;
 
 @Repository
 @Transactional
-public class UsuarioRepositoryImpl implements IUsuarioRepository{
+public class UsuarioRepositoryImpl implements IUsuarioRepository {
 
     @PersistenceContext
     private EntityManager entityManager;
-
 
     @Override
     public Usuario consultarPorUserName(String username) {
@@ -25,7 +24,9 @@ public class UsuarioRepositoryImpl implements IUsuarioRepository{
         return myQuery.getSingleResult();
     }
 
-    
+    @Override
+    public void insertarUsuario(Usuario usuario) {
+        this.entityManager.persist(usuario);
+    }
 
-    
 }
